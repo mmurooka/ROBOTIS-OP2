@@ -243,7 +243,7 @@ int main(int argc, char **argv)
   controller->addMotionModule((MotionModule*) BaseModule::getInstance());
   controller->addMotionModule((MotionModule*) HeadControlModule::getInstance());
   controller->addMotionModule((MotionModule*) WalkingModule::getInstance());
-  controller->addMotionModule((MotionModule*) DirectControlModule::getInstance());
+  // controller->addMotionModule((MotionModule*) DirectControlModule::getInstance());
   controller->addMotionModule((MotionModule*) JointTrajectoryControlModule::getInstance());
   controller->addMotionModule((MotionModule*) OnlineWalkingModule::getInstance());
 
@@ -258,6 +258,10 @@ int main(int argc, char **argv)
 
   g_init_pose_pub.publish(init_msg);
   ROS_INFO("Go to init pose");
+
+  // set joint_trajectory_control_module
+  sleep(6);
+  controller->setCtrlModule(std::string("joint_trajectory_control_module"));
 
   while (ros::ok())
   {
