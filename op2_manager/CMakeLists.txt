@@ -30,6 +30,7 @@ find_package(catkin REQUIRED COMPONENTS
   op2_walking_module
   op3_action_module
   op3_direct_control_module
+  op3_topic_control_module
   op3_joint_trajectory_control_module
   op3_online_walking_module
 )
@@ -51,7 +52,7 @@ find_package(catkin REQUIRED COMPONENTS
 ################################################################################
 catkin_package(
   LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS roscpp robotis_controller_msgs op3_action_module_msgs op3_walking_module_msgs op3_online_walking_module_msgs cmake_modules dynamixel_sdk robotis_framework_common robotis_device robotis_controller robotis_math op2_kinematics_dynamics op3_balance_control open_cr_module op3_base_module op3_head_control_module op2_walking_module op3_action_module op3_direct_control_module op3_joint_trajectory_control_module op3_online_walking_module
+  CATKIN_DEPENDS roscpp robotis_controller_msgs op3_action_module_msgs op3_walking_module_msgs op3_online_walking_module_msgs cmake_modules dynamixel_sdk robotis_framework_common robotis_device robotis_controller robotis_math op2_kinematics_dynamics op3_balance_control open_cr_module op3_base_module op3_head_control_module op2_walking_module op3_action_module op3_direct_control_module op3_topic_control_module op3_joint_trajectory_control_module op3_online_walking_module
 )
 
 ################################################################################

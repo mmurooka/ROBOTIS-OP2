@@ -32,6 +32,7 @@
   <depend>op2_walking_module</depend>
   <depend>op3_action_module</depend>
   <depend>op3_direct_control_module</depend>
+  <depend>op3_topic_control_module</depend>
   <depend>op3_joint_trajectory_control_module</depend>
   <depend>op3_online_walking_module</depend>
   <exec_depend>op3_localization</exec_depend>

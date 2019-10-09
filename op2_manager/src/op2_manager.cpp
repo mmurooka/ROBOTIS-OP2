@@ -31,8 +31,9 @@
 #include "op3_head_control_module/head_control_module.h"
 #include "op3_action_module/action_module.h"
 #include "op2_walking_module/op2_walking_module.h"
-#include "op3_direct_control_module/direct_control_module.h"
-#include "op3_joint_trajectory_control_module/joint_trajectory_control_module.h"
+// #include "op3_direct_control_module/direct_control_module.h"
+#include "op3_topic_control_module/topic_control_module.h"
+// #include "op3_joint_trajectory_control_module/joint_trajectory_control_module.h"
 #include "op3_online_walking_module/online_walking_module.h"
 
 using namespace robotis_framework;
@@ -241,11 +242,12 @@ int main(int argc, char **argv)
   /* Add Motion Module */
   controller->addMotionModule((MotionModule*) ActionModule::getInstance());
   controller->addMotionModule((MotionModule*) BaseModule::getInstance());
-  controller->addMotionModule((MotionModule*) HeadControlModule::getInstance());
-  controller->addMotionModule((MotionModule*) WalkingModule::getInstance());
+  // controller->addMotionModule((MotionModule*) HeadControlModule::getInstance());
+  // controller->addMotionModule((MotionModule*) WalkingModule::getInstance());
   // controller->addMotionModule((MotionModule*) DirectControlModule::getInstance());
-  controller->addMotionModule((MotionModule*) JointTrajectoryControlModule::getInstance());
-  controller->addMotionModule((MotionModule*) OnlineWalkingModule::getInstance());
+  controller->addMotionModule((MotionModule*) TopicControlModule::getInstance());
+  // controller->addMotionModule((MotionModule*) JointTrajectoryControlModule::getInstance());
+  // controller->addMotionModule((MotionModule*) OnlineWalkingModule::getInstance());
 
   // start timer
   controller->startTimer();
@@ -261,7 +263,7 @@ int main(int argc, char **argv)
 
   // set joint_trajectory_control_module
   sleep(6);
-  controller->setCtrlModule(std::string("joint_trajectory_control_module"));
+  controller->setCtrlModule(std::string("topic_control_module"));
 
   while (ros::ok())
   {
